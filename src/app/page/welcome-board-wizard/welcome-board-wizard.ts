@@ -1,13 +1,18 @@
 import { Component, ViewChild, signal } from '@angular/core';
-import { Wizard } from '../wizard/wizard';
-import { StandOptions } from '../stand-options/stand-options';
-import { BoardShapeOptionsComponent } from '../board-shape-options/board-shape-options';
-import { AcrylicOptionsComponent } from '../acrylic-options/acrylic-options';
+import { Wizard } from '../../components/wizard/wizard';
+import { StandOptions } from '../../components/options/stand-options/stand-options';
+import { BoardShapeOptionsComponent } from '../../components/options/board-shape-options/board-shape-options';
+import { AcrylicOptionsComponent } from '../../components/options/acrylic-options/acrylic-options';
+import { LayoutOptionsComponent } from '../../components/options/layout-options/layout-options';
 
 @Component({
   selector: 'app-welcome-board-wizard',
   standalone: true,
-  imports: [Wizard, StandOptions, BoardShapeOptionsComponent, AcrylicOptionsComponent],
+  imports: [Wizard, StandOptions, 
+    BoardShapeOptionsComponent, 
+    AcrylicOptionsComponent,
+    LayoutOptionsComponent
+  ],
   templateUrl: './welcome-board-wizard.html',
   styleUrl: './welcome-board-wizard.css'
 })
@@ -26,7 +31,7 @@ export class WelcomeBoardWizard {
   @ViewChild(Wizard) wizardComponent!: Wizard;
 
   // A simple mapping from stand name to image URL (replace with your actual image paths)
-  private standImageMap: { [key: string]: string } = {
+  private standImageMap: Record<string, string> = {
     'metal-easel': 'assets/images/metal-easel.png',
     'wooden-easel': 'assets/images/wooden-easel.png',
     'metallic-gold-rectangular-frame': 'assets/images/metallic-gold-rectangular-frame.png',

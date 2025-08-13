@@ -1,7 +1,7 @@
-import { Component, OnInit, signal, output, computed } from '@angular/core';
-import { NeuRadioComponent } from '../components/neuromorphic/neu-radio/neu-radio';
+import { Component, OnInit, signal, output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators, FormGroup } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NeuRadioComponent } from '../../neuromorphic/neu-radio/neu-radio';
 
 @Component({
   selector: 'app-acrylic-options',

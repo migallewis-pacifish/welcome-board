@@ -1,7 +1,7 @@
 import { Component, output, signal, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { NeuRadioComponent } from '../components/neuromorphic/neu-radio/neu-radio';
+import { NeuRadioComponent } from '../../neuromorphic/neu-radio/neu-radio';
 
 
 @Component({
