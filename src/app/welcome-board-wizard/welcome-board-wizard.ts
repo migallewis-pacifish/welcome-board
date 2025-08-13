@@ -1,11 +1,13 @@
 import { Component, ViewChild, signal } from '@angular/core';
 import { Wizard } from '../wizard/wizard';
 import { StandOptions } from '../stand-options/stand-options';
+import { BoardShapeOptionsComponent } from '../board-shape-options/board-shape-options';
+import { AcrylicOptionsComponent } from '../acrylic-options/acrylic-options';
 
 @Component({
   selector: 'app-welcome-board-wizard',
   standalone: true,
-  imports: [Wizard, StandOptions],
+  imports: [Wizard, StandOptions, BoardShapeOptionsComponent, AcrylicOptionsComponent],
   templateUrl: './welcome-board-wizard.html',
   styleUrl: './welcome-board-wizard.css'
 })

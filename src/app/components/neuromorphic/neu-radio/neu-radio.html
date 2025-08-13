@@ -1,0 +1,18 @@
+<div class="neu-radio-wrapper">
+    <div class="neu-radio-icon">
+      <img [src]="icon()" [alt]="label() + ' icon'">
+    </div>
+    <input
+      class="neu-radio-state"
+      type="radio"
+      [id]="value()"
+      [value]="value()"
+      [checked]="checked()"
+      (change)="onChange($event)"
+      (blur)="onTouched()"
+    >
+    <label class="neu-radio-label" [for]="value()">
+      <div class="neu-radio-indicator"></div>
+      <span class="neu-radio-text">{{ label() }}</span>
+    </label>
+  </div>

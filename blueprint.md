@@ -14,7 +14,11 @@ This project is an Angular application featuring a wizard component. The wizard 
 *   **Stand Options Component:** A new standalone component to display options for selecting a stand, designed to be projected into the wizard.
 *   **Welcome Board Wizard Page:** A new page component that will utilize the `wizard` component and project the `stand-options` component as the initial set of options.
 
+- Create a `board-shape-options` component to offer options for "Arc" and "Rectangle" board shapes. When "Rectangle" is selected, display additional options for "Portrait" and "Landscape" orientation.
+- Integrate the `board-shape-options` component into the Welcome Board Wizard as the second step.
 - Implement a step progress indicator in the Welcome Board Wizard showing the steps: 'Choose your stand', 'Select your board shape', 'Pick your acrylic', 'Define layout', 'Add message', 'Confirm order'.
+- Create a new `acrylic-options` component. This component should offer options for "Black" and "Clear" acrylic types. If "Clear" is selected, additional options for painted background colors should appear.
+- Integrate the `acrylic-options` component into the Welcome Board Wizard as the third step.
 - Continue refining the `selectOption` logic in `/src/app/wizard/wizard.ts` to handle more sophisticated layering (e.g., z-index, specific positions).
 - Add logic to handle deselection of options and remove the corresponding image layers.
 - Explore more dynamic ways to load options based on the current step or selected options.

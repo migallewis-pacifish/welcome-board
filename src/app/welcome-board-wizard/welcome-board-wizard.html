@@ -11,7 +11,14 @@
 
         @if (currentStepIndex() === 0) {
             <app-stand-options (standSelected)="handleStandSelection($event)"></app-stand-options>
-        } @else {
+        }
+        @else if (currentStepIndex() === 1) {
+            <app-board-shape-options></app-board-shape-options>
+        }
+        @else if (currentStepIndex() === 2) {
+            <app-acrylic-options></app-acrylic-options>
+        }
+        @else {
             <div>Step {{ currentStep() }} placeholder options</div>
         }
     </div>

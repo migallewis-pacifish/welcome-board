@@ -1,0 +1,14 @@
+.acrylic-options-container {
+  margin-bottom: 20px;
+}
+
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.radio-options {
+  display: flex;
+  justify-content: space-around; 
+}

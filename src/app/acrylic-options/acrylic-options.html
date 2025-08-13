@@ -1,0 +1,21 @@
+<div class="acrylic-options-container">
+  <form [formGroup]="acrylicOptionsForm">
+    <h2>Select Acrylic Type</h2>
+    <div class="radio-options">
+      @for (option of acrylicOptions(); track option.value) {
+        <app-neu-radio [formControlName]="'acrylicType'" [value]="option.value" [label]="option.label"></app-neu-radio>
+      }
+    </div>
+
+    @if (acrylicOptionsForm.get('type')?.value === 'Clear') {
+      <div class="painted-background-options">
+        <h3>Select Painted Background Color</h3>
+        <div class="radio-options">
+          @for (color of colorOptions(); track color) {
+            <app-neu-radio [formControlName]="'paintedBackground'" [value]="color.value" [label]="color.label"></app-neu-radio>
+          }
+        </div>
+      </div>
+    }
+  </form>
+</div>
