@@ -1,0 +1,16 @@
+<div class="wizard-container">
+  <div class="display-area">
+    @for (image of imageLayers(); track $index) {
+      <img [src]="image" alt="Layered image">
+    }
+  </div>
+  <div class="options-area">
+    <div class="options">
+      <ng-content  select="[options]"></ng-content>
+    </div>
+    <div class="navigation">      
+      <button class="neu-button" (click)="previousClick.emit()">Previous</button>
+      <button class="neu-button" (click)="nextClick.emit()">Next</button>
+    </div>
+  </div>
+</div>

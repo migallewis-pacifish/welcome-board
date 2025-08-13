@@ -1,0 +1,11 @@
+.radio-options {
+  display: flex;
+  justify-content: space-around;
+}
+
+h2 {
+  margin-bottom: 3px;
+}
+p {
+  margin-top: 3px;
+}
