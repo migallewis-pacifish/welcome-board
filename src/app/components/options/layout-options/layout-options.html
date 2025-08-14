@@ -1,11 +1,11 @@
 <div class="layout-options-container">
   <form [formGroup]="layoutForm">
-    <h2>Define Layout</h2>
     <div class="radio-options">
       @for (option of layoutOptions(); track option.value) {
         <app-neu-radio
           [value]="option.value"
           [label]="option.label"
+          [groupName]="'layout'"
           formControlName="layout">
         </app-neu-radio>
       }

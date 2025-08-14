@@ -1,9 +1,8 @@
 <div class="board-shape-options-container">
   <form [formGroup]="boardShapeForm">
-    <h2>Select Board Shape</h2>
      <div class="radio-options">
           @for (option of shapeOptions(); track option.value) {
-               <app-neu-radio formControlName="shape" [value]="option.value" [label]="option.label"></app-neu-radio>
+               <app-neu-radio formControlName="shape" [value]="option.value" [label]="option.label" [groupName]="'shape'"></app-neu-radio>
           }
      </div>
 
@@ -12,7 +11,7 @@
                <h3>Select Orientation</h3>
                <div class="radio-options">
                     @for (option of orientationOptions(); track option.value) {
-                         <app-neu-radio formControlName="orientation" [value]="option.value" [label]="option.label"></app-neu-radio>
+                         <app-neu-radio formControlName="orientation" [value]="option.value" [label]="option.label" [groupName]="'orientation'"></app-neu-radio>
                     }
                </div>
           </div>

@@ -1,28 +1,27 @@
 <app-wizard (nextClick)="nextStep()" (previousClick)="previousStep()">
-    <div options>    
-        <div class="step-progress">
-            @for (step of steps; track $index) {
-                <div class="step" [class.active]="currentStepIndex() === $index">
-                    <p>{{ step }}</p>
-                    <div class="neu-step">{{ $index + 1 }}</div>
+    <div options>
+        @for (step of steps; track $index) {
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h3>{{ step.header }}</h3>
+                    <p>{{ step.description}}</p>
                 </div>
-            }
-        </div>
-
-        @if (currentStepIndex() === 0) {
-            <app-stand-options (standSelected)="handleStandSelection($event)"></app-stand-options>
-        }
-        @else if (currentStepIndex() === 1) {
-            <app-board-shape-options></app-board-shape-options>
-        }
-        @else if (currentStepIndex() === 2) {
-            <app-acrylic-options></app-acrylic-options>
-        }
-        @else if (currentStepIndex() === 3) {
-            <<app-layout-options></app-layout-options>
-        }
-        @else {
-            <div>Step {{ currentStep() }} placeholder options</div>
+                @if (currentStepIndex() === $index) {
+                    <div class="accordion-body">    
+                        @if ($index === 0) {
+                            <app-stand-options (standSelected)="handleStandSelection($event)"></app-stand-options>
+                        } @else if ($index === 1) {
+                            <app-board-shape-options></app-board-shape-options>
+                        } @else if ($index === 2) {
+                            <app-acrylic-options></app-acrylic-options>
+                        } @else if ($index === 3) {
+                            <app-layout-options></app-layout-options>
+                        } @else {
+                            <div>Step {{ step }} placeholder options</div>
+                        }
+                    </div>
+                }
+            </div>
         }
     </div>
 </app-wizard>

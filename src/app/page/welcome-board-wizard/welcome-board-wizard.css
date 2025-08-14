@@ -1,18 +1,26 @@
-/* Styles for the step progress indicator */
-.step-progress {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px; /* Add some space below the stepper */
+.accordion-item {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border-radius: 6px;
 }
 
-.step-progress .step {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.accordion-header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  p {
+    margin: 0px;
+  }
+  h3 {
+    margin: 0px;
+    margin-bottom: 3px;
+  }
 }
 
-.step-progress .step.active {
-  font-weight: bold;
-  color: #6eafdf; /* Example color for the active step */
+.accordion-body {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background-color: #fff;
 }
+

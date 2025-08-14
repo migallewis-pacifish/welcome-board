@@ -18,12 +18,30 @@ import { LayoutOptionsComponent } from '../../components/options/layout-options/
 })
 export class WelcomeBoardWizard {
   public steps = [
-    'Choose your stand',
-    'Select your board shape',
-    'Pick your acrylic',
-    'Define layout',
-    'Add message',
-    'Confirm order'
+ {
+ header: 'Choose your stand',
+ description: 'Select the perfect stand to support your welcome board.'
+    },
+ {
+ header: 'Select your board shape',
+ description: 'Choose the shape of your acrylic board.'
+    },
+ {
+ header: 'Pick your acrylic',
+ description: 'Decide on the type and color of your acrylic.'
+    },
+ {
+ header: 'Define layout',
+ description: 'Arrange the sections and overall look of your design.'
+    },
+ {
+ header: 'Add message',
+ description: 'Personalize your board with a custom message.'
+    },
+ {
+ header: 'Confirm order',
+ description: 'Review your selections and complete your order.'
+    }
   ];
   public totalSteps = signal<number>(3);
   public currentStepIndex = signal<number>(0);

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NeuRadio } from './neu-radio';
+import { NeuRadioComponent } from './neu-radio';
 
 describe('NeuRadio', () => {
-  let component: NeuRadio;
-  let fixture: ComponentFixture<NeuRadio>;
+  let component: NeuRadioComponent;
+  let fixture: ComponentFixture<NeuRadioComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NeuRadio]
+      imports: [NeuRadioComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NeuRadio);
+    fixture = TestBed.createComponent(NeuRadioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
