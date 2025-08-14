@@ -1,18 +1,23 @@
 <div class="neu-radio-wrapper">
-    <div class="neu-radio-icon">
-      <img [src]="icon()" [alt]="label() + ' icon'">
-    </div>
-    <input
+    @if (icon()) {
+      <div class="neu-radio-icon">
+        <img [src]="icon()" [alt]="label() + ' icon'">
+      </div>
+    }
+    <div (click)="onModelChange($event)" class="neu-radio">
+      <input
       class="neu-radio-state"
       type="radio"
       [id]="value()"
+      [name]="groupName()"
       [value]="value()"
       [checked]="checked()"
       (change)="onChange($event)"
       (blur)="onTouched()"
-    >
-    <label class="neu-radio-label" [for]="value()">
-      <div class="neu-radio-indicator"></div>
-      <span class="neu-radio-text">{{ label() }}</span>
-    </label>
+      >
+      <label (click)="onLabelClick()" class="neu-radio-label" [for]="value()">
+        <div class="neu-radio-indicator"></div>
+        <span class="neu-radio-text">{{ label() }}</span>
+      </label>
+    </div>
   </div>

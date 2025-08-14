@@ -1,0 +1,15 @@
+<div class="stand-options-container" >
+  <form [formGroup]="standForm" >
+    <div class="radio-options">
+      @for (option of options(); track option.value) {
+        <app-neu-radio formControlName="stand" 
+        [value]="option.value" 
+        [label]="option.label"
+        [icon]="option.icon"
+        [groupName]="'stand'"
+        ></app-neu-radio>
+      }
+    </div>
+  </form>
+</div>
+

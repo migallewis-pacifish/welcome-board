@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, signal, effect, input, output, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { NeuRadioComponent } from '../components/neuromorphic/neu-radio/neu-radio';
+import { NeuRadioComponent } from '../../neuromorphic/neu-radio/neu-radio';
 @Component({
   selector: 'app-board-shape-options',
   standalone: true,

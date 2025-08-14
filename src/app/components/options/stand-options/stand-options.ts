@@ -1,7 +1,7 @@
 import { Component, output, signal, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { NeuRadioComponent } from '../components/neuromorphic/neu-radio/neu-radio';
+import { NeuRadioComponent } from '../../neuromorphic/neu-radio/neu-radio';
 
 
 @Component({
@@ -12,10 +12,10 @@ import { NeuRadioComponent } from '../components/neuromorphic/neu-radio/neu-radi
 })
 export class StandOptions implements OnDestroy {
   options = signal([
-    { value: 'wooden-easel', label: 'Wooden Easel', icon: './assets/portable.svg' },
-    { value: 'metal-easel', label: 'Metal Easel', icon: './assets/convertible.svg' },
-    { value: 'metalic-black-frame', label: 'Metalic Black Frame', icon: './assets/tabletop.svg' },
-    { value: 'metalic-gold-frame', label: 'Metalic Gold Frame', icon: './assets/tabletop.svg' }
+    { value: 'wooden-easel', label: 'Wooden Easel', icon: '/assets/wooden_easel.png' },
+    { value: 'metal-easel', label: 'Metal Easel', icon: './assets/metal_easel.png' },
+    { value: 'metalic-black-frame', label: 'Metalic Black Frame', icon: './assets/black_frame.png' },
+    { value: 'metalic-gold-frame', label: 'Metalic Gold Frame', icon: './assets/gold_frame.png' }
   ]);
 
   standSelected = output<string>();
@@ -28,6 +28,7 @@ export class StandOptions implements OnDestroy {
   constructor() {
     this.formSubscription = this.standForm.get('stand')?.valueChanges.subscribe(value => {
       if (value) {
+        console.log('Selected Stand:', value);
         this.standSelected.emit(value);
       }
     });

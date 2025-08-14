@@ -1,0 +1,26 @@
+.accordion-item {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.accordion-header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  p {
+    margin: 0px;
+  }
+  h3 {
+    margin: 0px;
+    margin-bottom: 3px;
+  }
+}
+
+.accordion-body {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+

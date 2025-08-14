@@ -20,6 +20,8 @@ This project is an Angular application featuring a wizard component. The wizard 
 - Create a new `acrylic-options` component. This component should offer options for "Black" and "Clear" acrylic types. If "Clear" is selected, additional options for painted background colors should appear.
 - Integrate the `acrylic-options` component into the Welcome Board Wizard as the third step.
 - Continue refining the `selectOption` logic in `/src/app/wizard/wizard.ts` to handle more sophisticated layering (e.g., z-index, specific positions).
+- Create a new `layout-options` component. This component should offer options for 2 sections, 3 sections, skewed layout, and straight layout.
+- Integrate the `layout-options` component into the Welcome Board Wizard as the fourth step.
 - Add logic to handle deselection of options and remove the corresponding image layers.
 - Explore more dynamic ways to load options based on the current step or selected options.
 
@@ -30,6 +32,7 @@ This project is an Angular application featuring a wizard component. The wizard 
 *   Implement more dynamic option loading based on the wizard's state.
 *   Add actual image URLs for the stand options in the `handleStandSelection` method of the `WelcomeBoardWizard` component.
 *   Create additional option components for other steps of the wizard.
+*   Develop logic in the `layout-options` component to configure the layout of the board based on user selection.
 
 **Current Plan:** The basic wizard component structure with display, options (using content projection), and navigation areas has been created and styled. The image layering setup in the display area is complete. The Stand Options Component has been created with options and event emission. The Next and Previous navigation has been implemented in the Welcome Board Wizard Page, controlling the displayed options based on the current step. Neumorphic styling has been applied to the buttons in the Stand Options component. A simple step indicator has been added and will be replaced with a step progress indicator with named steps, including numbers for each step and visual lines connecting them.
  Neumorphic styling has been applied to the buttons in the Stand Options component.

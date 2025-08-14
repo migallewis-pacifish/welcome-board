@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NeuRadioComponent } from './neu-radio';
+import { LayoutOptions } from './layout-options';
 
-describe('NeuRadio', () => {
-  let component: NeuRadioComponent;
-  let fixture: ComponentFixture<NeuRadioComponent>;
+describe('LayoutOptions', () => {
+  let component: LayoutOptions;
+  let fixture: ComponentFixture<LayoutOptions>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NeuRadioComponent]
+      imports: [LayoutOptions]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NeuRadioComponent);
+    fixture = TestBed.createComponent(LayoutOptions);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

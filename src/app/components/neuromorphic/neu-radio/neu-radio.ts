@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, signal, input, output, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 
@@ -21,13 +21,18 @@ export class NeuRadioComponent implements ControlValueAccessor {
   value = input<string>('');
   label = input<string>('');
   icon = input<string | undefined>(undefined);
+  groupName = input<string>('');
 
   private _value: string | null = null;
   private _disabled = false;
 
-  checked = computed(() => this._value === this.value());
+  checked = computed(() => {
+ return this._value === this.value();
+  });
 
-  onChange: any = () => {};
+  onChange: any = () => {
+    console.log(" hello");
+  };
   onTouched: any = () => {};
 
   writeValue(value: any): void {
@@ -50,5 +55,9 @@ export class NeuRadioComponent implements ControlValueAccessor {
     const target = event.target as HTMLInputElement;
     this._value = target.value;
     this.onChange(this._value);
+  }
+
+  onLabelClick(): void {
+    console.log('Label clicked!');
   }
 }

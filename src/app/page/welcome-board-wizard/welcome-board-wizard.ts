@@ -1,24 +1,47 @@
 import { Component, ViewChild, signal } from '@angular/core';
-import { Wizard } from '../wizard/wizard';
-import { StandOptions } from '../stand-options/stand-options';
-import { BoardShapeOptionsComponent } from '../board-shape-options/board-shape-options';
-import { AcrylicOptionsComponent } from '../acrylic-options/acrylic-options';
+import { Wizard } from '../../components/wizard/wizard';
+import { StandOptions } from '../../components/options/stand-options/stand-options';
+import { BoardShapeOptionsComponent } from '../../components/options/board-shape-options/board-shape-options';
+import { AcrylicOptionsComponent } from '../../components/options/acrylic-options/acrylic-options';
+import { LayoutOptionsComponent } from '../../components/options/layout-options/layout-options';
 
 @Component({
   selector: 'app-welcome-board-wizard',
   standalone: true,
-  imports: [Wizard, StandOptions, BoardShapeOptionsComponent, AcrylicOptionsComponent],
+  imports: [Wizard, StandOptions, 
+    BoardShapeOptionsComponent, 
+    AcrylicOptionsComponent,
+    LayoutOptionsComponent
+  ],
   templateUrl: './welcome-board-wizard.html',
   styleUrl: './welcome-board-wizard.css'
 })
 export class WelcomeBoardWizard {
   public steps = [
-    'Choose your stand',
-    'Select your board shape',
-    'Pick your acrylic',
-    'Define layout',
-    'Add message',
-    'Confirm order'
+ {
+ header: 'Choose your stand',
+ description: 'Select the perfect stand to support your welcome board.'
+    },
+ {
+ header: 'Select your board shape',
+ description: 'Choose the shape of your acrylic board.'
+    },
+ {
+ header: 'Pick your acrylic',
+ description: 'Decide on the type and color of your acrylic.'
+    },
+ {
+ header: 'Define layout',
+ description: 'Arrange the sections and overall look of your design.'
+    },
+ {
+ header: 'Add message',
+ description: 'Personalize your board with a custom message.'
+    },
+ {
+ header: 'Confirm order',
+ description: 'Review your selections and complete your order.'
+    }
   ];
   public totalSteps = signal<number>(3);
   public currentStepIndex = signal<number>(0);
@@ -26,7 +49,7 @@ export class WelcomeBoardWizard {
   @ViewChild(Wizard) wizardComponent!: Wizard;
 
   // A simple mapping from stand name to image URL (replace with your actual image paths)
-  private standImageMap: { [key: string]: string } = {
+  private standImageMap: Record<string, string> = {
     'metal-easel': 'assets/images/metal-easel.png',
     'wooden-easel': 'assets/images/wooden-easel.png',
     'metallic-gold-rectangular-frame': 'assets/images/metallic-gold-rectangular-frame.png',
